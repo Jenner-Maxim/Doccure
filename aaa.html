@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one {
+            display: grid;
+            flex-direction: row;
+            gap: 10px;
+            grid-template-columns: repeat(4, 300px);
+        }
+        .two {
+            width: 300px;
+            background-color: black;
+            height: 300px;
+        }
+        .three {
+            width: 300px;
+            background-color: rgb(58, 164, 83);
+            height: 300px;
+            
+        }
+        .b {
+            width: 100px;
+            background-color: rgb(164, 58, 79);
+            height: 100px;
+        }
+        .c {
+            width: 100px;
+            background-color: rgb(120, 58, 164);
+            height: 100px;
+        }
+        .d{
+            width: 100px;
+            background-color: rgb(85, 78, 78);
+            height: 100px;
+        }
+        .cd{
+            display: grid;
+        }
+        .aa {
+            width: 300px;
+            background-color: black;
+            height: 300px;
+        }
+        .bb {
+            width: 300px;
+            background-color: black;
+            height: 300px;
+        }
+        @media (max-width:1100px) {
+            .one {
+            grid-template-columns: repeat(2, 300px);
+        }
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="one">
+        <div class="two"></div>
+        <div class="aa"></div>
+        <div class="bb"></div>
+        <div class="three">
+            <div class="b"></div>
+            <div class="cd">
+            <div class="c"></div>
+            <div class="d"></div>
+        </div>
+        </div>
+        <div class="two"></div>
+        <div class="aa"></div>
+        <div class="bb"></div>
+        <div class="three">
+            <div class="b"></div>
+            <div class="cd">
+            <div class="c"></div>
+            <div class="d"></div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
