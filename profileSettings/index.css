@@ -1,0 +1,28 @@
+*, ::after, ::after{
+    box-sizing: border-box;
+}
+.main1{
+    border: 1px solid black;
+    width: 1300px;
+}
+.menu{
+    /* float: center; */
+}
+.menu ul{
+    /* display: inline-flex; */
+    /* text-decoration: none; */
+}
+.menu ul li{
+    text-decoration: none;
+}
+.menu ul li a{
+    text-decoration: none;
+   
+}
+.contact{
+    float: right;
+    display: inline-flex;
+}
+.logo1, .info{
+    /* float: right; */
+}
