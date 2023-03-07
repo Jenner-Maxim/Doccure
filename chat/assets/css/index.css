@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   /* font-family: "Roboto", sans-serif; */
+/*   height: 100vh;
+  padding: 0; */
 }
 
 .nav-bar {
@@ -12,6 +15,8 @@ body {
   margin: 0;
   padding-bottom: 5px;
   align-items: center;
+  border-bottom: 1px solid rgb(230, 230, 230);
+  position: fixed;
 }
 
 .bar-show {
@@ -21,7 +26,7 @@ body {
 }
 
 .nav-bar-left {
-  font-size: 2rem;
+  font-size: 1.9rem;
   color: #10defd;
   cursor: pointer;
 }
@@ -35,7 +40,7 @@ body {
 }
 
 .logo img {
-  width: 80%;
+  width: 70%;
 }
 
 .nav-bar .pages {
@@ -45,12 +50,12 @@ body {
   padding-right: 100px;
 }
 
-div.pages > * {
+div.pages>* {
   cursor: pointer;
   color: #2e3842;
 }
 
-div.pages > *:hover {
+div.pages>*:hover {
   color: hsl(140, 100%, 45%);
 }
 
@@ -132,6 +137,7 @@ div.pages > *:hover {
   .nav-bar-left {
     display: none;
   }
+
 }
 
 @media only screen and (min-width: 1200px) {
@@ -140,15 +146,27 @@ div.pages > *:hover {
   }
 }
 
-hr {
-  border: .5px solid rgba(169, 169, 169, 0.336);
+
+/* Chat */
+body .chat {
+  /* margin-top: 70px; */
+}
+
+.active {
+  display: none;
 }
 
 /* Search */
-.chat-title {
+.chat .chat-title {
   display: flex;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 17.4px 20px;
+  /* position: fixed; */
+  /* height: 20px; */
+  background: #fff;
+  width: 90%;
+  /* padding-top: 50px; */
+  /* top: 74px; */
 }
 
 .chat .search {
@@ -156,8 +174,15 @@ hr {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  background-color: rgba(128, 128, 128, 0.11);
+  background-color: rgb(240, 240, 240);
   padding: 10px;
+  /* margin-top: 60px;
+  position: fixed; */
+  /* width: 100%; */
+}
+
+.chat .active .person {
+  margin-top: 110px;
 }
 
 .chat .search input {
@@ -222,7 +247,23 @@ hr {
   background-color: rgba(128, 128, 128, 0.11);
 }
 
+
+
 /* Chat Message */
+
+/* .chat-message {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+} */
+
+/* @media screen and (min-width : 1000px) {
+  .chat-message {
+    display: flex;
+    width: 60%;
+    justify-content: left;
+  }
+} */
 
 .chat-message .profile-setting {
   display: flex;
@@ -230,8 +271,8 @@ hr {
   align-items: center;
   padding-left: 10px;
   padding-right: 10px;
-  position: fixed;
-  top: 0;
+  /* position: fixed; */
+  top: 50;
   background: #fff;
   width: 100%;
 }
@@ -240,17 +281,17 @@ hr {
   display: flex;
 }
 
-.chat-message .profile-setting .profile-details .profile{
+.chat-message .profile-setting .profile-details .profile {
   display: flex;
   align-items: center;
 }
 
-.chat-message .profile-setting .profile-details .profile > *{
+.chat-message .profile-setting .profile-details .profile>* {
   padding: 10px;
 }
 
-.chat-message .profile-setting .profile-details .profile img{
-  width: 50px;
+.chat-message .profile-setting .profile-details .profile img {
+  width: 40px;
   border-radius: 50%;
 }
 
@@ -262,20 +303,57 @@ hr {
   display: flex;
 }
 
-.chat-message .profile-setting .call-details > * {
+.chat-message .profile-setting .call-details>* {
   padding: 10px;
 }
 
 .chat-message .chat {
-  height: 450px;
+  height: calc(100% - 212px);
   background: rgba(128, 128, 128, 0.11);
+  height: 100%;
+  overflow: auto;
+  justify-content: flex-end;
+  width: calc(300% - 600px);
+}
+
+.chat-message .chat .chat-content {
+  padding: 10px;
+}
+
+.chat-message .chat .chat-content .mine {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chat-message .chat .chat-content .mine p {
+  background: #b7bfc7;
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.chat-message .chat .yours {
+  display: flex;
+  max-width: 80%;
+}
+
+.chat-message .chat .yours .profile img {
+  width: 30px;
+  border-radius: 50%;
+}
+
+.chat-message .chat .yours .message {
+  background: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 5px;
 }
 
 .chat-message .send-message {
   position: fixed;
   bottom: 0;
   display: flex;
-  /* justify-content: space-around; */
+  justify-content: space-around;
   padding: 10px 0px;
   background-color: #fff;
   width: 100%;
@@ -287,11 +365,11 @@ hr {
   font-size: 1.5rem;
   color: rgb(124, 124, 124);
   padding-left: 20px;
-  /* padding-right: 10px; */
+  padding-right: 10px;
 }
 
 .chat-message .send-message .send-content {
-  /* padding-left: -15px; */
+  padding-left: -15px;
   width: 65%;
 }
 
@@ -301,6 +379,8 @@ hr {
   border-radius: 20px;
   height: 30px;
   background-color: rgba(128, 128, 128, 0.11);
+  border: none;
+  padding: 5px 10px;
 }
 
 .chat-message .send-message .send {
@@ -313,4 +393,23 @@ hr {
   align-items: center;
   font-size: 1.4rem;
   color: #fff;
+}
+
+/* Resposiveness */
+
+@media only screen and (min-width: 1000px) {
+
+  .nav-bar {
+    position: fixed;
+    background: #fff;
+    width: 100%;
+    top: 0;
+  }
+  
+  .chat {
+    display: flex;
+  }
+  .active {
+    display: block;
+  }
 }
