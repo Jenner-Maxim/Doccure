@@ -3,9 +3,7 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  /* font-family: "Roboto", sans-serif; */
-/*   height: 100vh;
-  padding: 0; */
+  padding: 0;
 }
 
 .nav-bar {
@@ -17,6 +15,9 @@ body {
   align-items: center;
   border-bottom: 1px solid rgb(230, 230, 230);
   position: fixed;
+  background: #fff;
+  width: 100%;
+  top: 0;
 }
 
 .bar-show {
@@ -149,24 +150,29 @@ div.pages>*:hover {
 
 /* Chat */
 body .chat {
-  /* margin-top: 70px; */
+  padding-top: 70px;
+  width: 100%;
 }
 
-.active {
+/* .active {
   display: none;
 }
-
+ */
 /* Search */
 .chat .chat-title {
   display: flex;
   justify-content: space-between;
   padding: 17.4px 20px;
-  /* position: fixed; */
-  /* height: 20px; */
+  position: fixed;
   background: #fff;
-  width: 90%;
-  /* padding-top: 50px; */
-  /* top: 74px; */
+  width: 100%;
+  border-top: 1px solid #b7bfc7;
+}
+
+.chat .all-contact .chat-title .icon {
+  margin-right: 40px;
+  cursor: pointer;
+  color: #798586;
 }
 
 .chat .search {
@@ -176,9 +182,10 @@ body .chat {
   flex-direction: row;
   background-color: rgb(240, 240, 240);
   padding: 10px;
-  /* margin-top: 60px;
-  position: fixed; */
-  /* width: 100%; */
+  margin-top: 60px;
+  position: fixed;
+  width: 100%;
+  border-bottom: 1px solid #c6ccd1;
 }
 
 .chat .active .person {
@@ -195,6 +202,12 @@ body .chat {
   padding-left: 10px;
   color: darkgray;
   border: 1px solid;
+  margin-right: 20px;
+}
+
+.chat .all-contact .person {
+  padding-top: 120px;
+  cursor: pointer;
 }
 
 .chat .chat-person {
@@ -251,30 +264,22 @@ body .chat {
 
 /* Chat Message */
 
-/* .chat-message {
+.chat-message {
   position: fixed;
   height: 100%;
   width: 100%;
-} */
-
-/* @media screen and (min-width : 1000px) {
-  .chat-message {
-    display: flex;
-    width: 60%;
-    justify-content: left;
-  }
-} */
+}
 
 .chat-message .profile-setting {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left: 10px;
-  padding-right: 10px;
-  /* position: fixed; */
   top: 50;
   background: #fff;
   width: 100%;
+  position: fixed;
+  border-top: 1px solid #c6ccd1;
 }
 
 .chat-message .profile-setting .profile-details {
@@ -301,23 +306,24 @@ body .chat {
 
 .chat-message .profile-setting .call-details {
   display: flex;
+  padding-right: 20px;
 }
 
 .chat-message .profile-setting .call-details>* {
   padding: 10px;
 }
 
-.chat-message .chat {
-  height: calc(100% - 212px);
-  background: rgba(128, 128, 128, 0.11);
-  height: 100%;
-  overflow: auto;
-  justify-content: flex-end;
-  width: calc(300% - 600px);
+.chat-message .profile-setting .call-details .fa-solid {
+  cursor: pointer;
+  color: rgb(124, 124, 124);
 }
 
-.chat-message .chat .chat-content {
-  padding: 10px;
+.chat-message .chat {
+  height: calc(100% - 200px);
+  background: rgba(128, 128, 128, 0.11);
+  overflow: auto;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .chat-message .chat .chat-content .mine {
@@ -325,11 +331,14 @@ body .chat {
   justify-content: flex-end;
 }
 
-.chat-message .chat .chat-content .mine p {
+.chat-message .chat .chat-content .mine .my-message {
+  display: flex;
+  justify-content: flex-end;
   background: #b7bfc7;
   padding: 5px;
   border-radius: 5px;
-  display: inline-block;
+  margin: 10px;
+
 }
 
 .chat-message .chat .yours {
@@ -347,40 +356,40 @@ body .chat {
   padding: 5px;
   border-radius: 5px;
   margin-left: 5px;
+  margin-bottom: 10px;
+}
+
+.chat-message .chat .yours .message .your-message {
+  margin: 5px;
 }
 
 .chat-message .send-message {
-  position: fixed;
   bottom: 0;
   display: flex;
-  justify-content: space-around;
-  padding: 10px 0px;
+  padding: 10px 15px;
   background-color: #fff;
-  width: 100%;
-  justify-content: space-around;
   align-items: center;
 }
 
 .chat-message .send-message .file {
   font-size: 1.5rem;
   color: rgb(124, 124, 124);
-  padding-left: 20px;
-  padding-right: 10px;
+
 }
 
 .chat-message .send-message .send-content {
-  padding-left: -15px;
-  width: 65%;
+  width: calc(100% - 60px);
+  padding: 0 10px;
 }
 
 .chat-message .send-message .send-content input {
-  width: 95%;
+  width: calc(100% - 30px);
   font-size: 1rem;
   border-radius: 20px;
   height: 30px;
   background-color: rgba(128, 128, 128, 0.11);
   border: none;
-  padding: 5px 10px;
+  padding: 5px 15px;
 }
 
 .chat-message .send-message .send {
@@ -393,23 +402,58 @@ body .chat {
   align-items: center;
   font-size: 1.4rem;
   color: #fff;
+  justify-content: center;
+  cursor: pointer;
 }
 
-/* Resposiveness */
+/* Resposiveness for the chat*/
 
 @media only screen and (min-width: 1000px) {
 
-  .nav-bar {
-    position: fixed;
-    background: #fff;
-    width: 100%;
-    top: 0;
+  body .chat .all-contact {
+    justify-content: flex-start;
+    float: left;
+    width: 40%;
   }
-  
-  .chat {
-    display: flex;
+
+  .chat .chat-title {
+    width: 40%;
   }
-  .active {
+
+  .chat .search {
+    width: calc(40% - 19px);
+    margin-top: 61px;
+    background: rgb(243, 241, 241);
+    border-right: none;
+  }
+
+  .chat .search input {
+    margin-right: 0px;
+  }
+
+  body .chat .chat-message {
+    float: right;
+    width: 60%;
+    justify-content: flex-end;
+    left: 40%;
+    border-left: 1px solid #c6ccd1;
+  }
+
+  body .chat .chat-message .profile-setting {
+    width: 60%;
+  }
+
+  .chat-message .profile-setting .profile-details .profile .fa-chevron-left {
+    display: none;
+  }
+
+  .chat-message .profile-setting .profile-details .details {
     display: block;
+    padding-top: 5px;
   }
+
+  .chat-message .chat .chat-content {
+    padding-left: 10px;
+  }
+
 }
